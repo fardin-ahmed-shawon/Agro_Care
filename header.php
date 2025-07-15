@@ -35,6 +35,22 @@ include 'database/dbConnection.php';
 
             require 'css/style_about.php';
             
+        } else if ($current_page == 'testimonials.php') {
+
+            require 'css/style_testimonials.php';
+
+        } else if ($current_page == 'contact.php') {
+
+            require 'css/style_contact.php';
+
+        } else if ($current_page == 'login.php') {
+
+            require 'css/style_login.php';
+
+        } else if ($current_page == 'register.php') {
+
+            require 'css/style_register.php';
+
         }
     ?>
 
