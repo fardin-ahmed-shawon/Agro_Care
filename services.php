@@ -28,7 +28,7 @@ $page_title = 'Our Services | AgroFarm - Complete Farming Solutions';  // Set th
             <div class="services-container">
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Digital Marketplace">
+                        <img src="images/tean in field.jpg" alt="Digital Marketplace">
                     </div>
                     <div class="service-content">
                         <h3>Digital Marketplace</h3>

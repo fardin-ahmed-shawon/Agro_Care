@@ -38,7 +38,7 @@ $page_title = 'About Us | AgroFarm - Empowering Farmers';  // Set the page title
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="AgroFarm Team in Field">
+                    <img src="images/tean in field.jpg" alt="AgroFarm Team in Field">
                 </div>
             </div>
         </div>

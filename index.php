@@ -101,7 +101,7 @@ $page_title = 'AgroFarm - Modern Agricultural Solutions';  // Set the page title
                 </div>
                 
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="AgroFarm Team in Field">
+                    <img src="images/tean in field.jpg" alt="AgroFarm Team in Field">
                 </div>
             </div>
         </div>
@@ -116,7 +116,7 @@ $page_title = 'AgroFarm - Modern Agricultural Solutions';  // Set the page title
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Market Access">
+                        <img src="images/tean in field.jpg" alt="Market Access">
                     </div>
                     <div class="service-content">
                         <h3>Digital Marketplace</h3>
