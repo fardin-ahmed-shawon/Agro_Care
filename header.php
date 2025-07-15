@@ -6,7 +6,7 @@ include 'database/dbConnection.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroFarm - <?= $page_title ?></title>
+    <title><?= $page_title ?></title>
     
     <!-- Site Link -->
     <base href="<?php echo $site_link; ?>">
@@ -24,16 +24,23 @@ include 'database/dbConnection.php';
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="index.html" class="logo"><i class="fas fa-leaf"></i>Agro<span>Care</span></a>
+                <a href="index.php" class="logo"><i class="fas fa-leaf"></i>Agro<span>Care</span></a>
                 <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
-					<li><a href="halal_investment.html">Halal Investment</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="testimonials.html">Testimonials</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="register.html">Register</a></li>
+                    <li><a href="index.php" class="<?= $current_page == 'index.php' ? 'active' : '' ?>">Home</a></li>
+
+					<li><a href="halal_investment.php" class="<?= $current_page == 'halal_investment.php' ? 'active' : '' ?>">Halal Investment</a></li>
+
+                    <li><a href="services.php" class="<?= $current_page == 'services.php' ? 'active' : '' ?>">Services</a></li>
+
+                    <li><a href="about.php" class="<?= $current_page == 'about.php' ? 'active' : '' ?>">About</a></li>
+
+                    <li><a href="testimonials.php" class="<?= $current_page == 'testimonials.php' ? 'active' : '' ?>">Testimonials</a></li>
+
+                    <li><a href="contact.php" class="<?= $current_page == 'contact.php' ? 'active' : '' ?>">Contact</a></li>
+
+                    <li><a href="login.php" class="<?= $current_page == 'login.php' ? 'active' : '' ?>">Login</a></li>
+
+                    <li><a href="register.php" class="<?= $current_page == 'register.php' ? 'active' : '' ?>">Register</a></li>
                 </ul>
                 <div class="mobile-menu">
                     <i class="fas fa-bars"></i>
