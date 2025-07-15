@@ -4,8 +4,6 @@ $page_title = 'About Us | AgroFarm - Empowering Farmers';  // Set the page title
 ?>
 <!-- Header -->
 <?php require 'header.php'; ?>
-<!-- CSS modify -->
-<?php include 'css/style_about.php'; ?>
 
 <!-----------=====================------------->
 <!--========== Start Main Content ===========-->

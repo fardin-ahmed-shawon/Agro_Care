@@ -4,8 +4,6 @@ $page_title = 'Our Services | AgroFarm - Complete Farming Solutions';  // Set th
 ?>
 <!-- Header -->
 <?php require 'header.php'; ?>
-<!-- CSS Modify -->
-<?php include 'css/style_services.php'; ?>
 
 <!-----------=====================------------->
 <!--========== Start Main Content ===========-->

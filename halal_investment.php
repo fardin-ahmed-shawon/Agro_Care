@@ -4,8 +4,6 @@ $page_title = 'AgroFarm - Halal Investment Opportunities';  // Set the page titl
 ?>
 <!-- Header -->
 <?php require 'header.php'; ?>
-<!-- CSS Modify -->
-<?php include 'css/style_halal_invest.php'; ?>
 
 <!-----------=====================------------->
 <!--========== Start Main Content ===========-->

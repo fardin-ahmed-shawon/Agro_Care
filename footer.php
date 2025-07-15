@@ -51,6 +51,24 @@
         </div>
     </footer>
 
-    <?php require 'js/script.php'; ?>
+    <?php
+        if ($current_page == 'index.php') {
+
+            require 'js/script.php';
+
+        } else if ($current_page == 'halal_investment.php') {
+
+            require 'js/script_halal_investment.php';
+
+        } else if ($current_page == 'services.php') {
+
+            require 'js/script_services.php';
+
+        } else if ($current_page == 'about.php') {
+
+            require 'js/script_about.php';
+            
+        }
+    ?>
 </body>
 </html>

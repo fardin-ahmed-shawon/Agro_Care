@@ -17,7 +17,27 @@ include 'database/dbConnection.php';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <?php require 'css/style.php'; ?>
+
+    <?php
+        if ($current_page == 'index.php') {
+
+            require 'css/style.php';
+
+        } else if( $current_page == 'halal_investment.php') {
+
+            require 'css/style_halal_investment.php';
+
+        } else if ($current_page == 'services.php') {
+
+            require 'css/style_services.php';
+
+        } else if ($current_page == 'about.php') {
+
+            require 'css/style_about.php';
+            
+        }
+    ?>
+
 </head>
 <body>
     <!-- Header (Navbar) -->
