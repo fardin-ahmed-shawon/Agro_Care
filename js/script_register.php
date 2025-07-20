@@ -147,57 +147,64 @@
         }
 
         // Form Submission with loading state
-        document.getElementById('farmerRegistrationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            if (!validateForm('farmer')) return;
-            
-            // Show loading state
-            const submitBtn = document.getElementById('farmer-submit-btn');
-            const spinner = document.getElementById('farmer-spinner');
-            submitBtn.disabled = true;
-            spinner.style.display = 'block';
-            
-            // Simulate API call
-            setTimeout(() => {
-                // Hide loading state
-                submitBtn.disabled = false;
-                spinner.style.display = 'none';
-                
-                // Show success message
-                document.getElementById('farmer-success').style.display = 'block';
-                this.style.display = 'none';
-                
-                // In a real app, you would send this data to your server
-                // window.location.href = 'farmer-dashboard.html';
-            }, 2000);
-        });
 
-        document.getElementById('buyerRegistrationForm').addEventListener('submit', function(e) {
+        // This function is not used
+        function showFarmerSuccessArea() {
+            document.getElementById('farmerRegistrationForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                if (!validateForm('farmer')) return;
+                
+                // Show loading state
+                const submitBtn = document.getElementById('farmer-submit-btn');
+                const spinner = document.getElementById('farmer-spinner');
+                submitBtn.disabled = true;
+                spinner.style.display = 'block';
+                
+                // Simulate API call
+                setTimeout(() => {
+                    // Hide loading state
+                    submitBtn.disabled = false;
+                    spinner.style.display = 'none';
+                    
+                    // Show success message
+                    document.getElementById('farmer-success').style.display = 'block';
+                    this.style.display = 'none';
+                    
+                    // In a real app, you would send this data to your server
+                    // window.location.href = 'farmer-dashboard.html';
+                }, 2000);
+            });
+        }
+        
+        // This function is not used
+        function showBuyerSuccessArea() {
+            document.getElementById('buyerRegistrationForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            if (!validateForm('buyer')) return;
-            
-            // Show loading state
-            const submitBtn = document.getElementById('buyer-submit-btn');
-            const spinner = document.getElementById('buyer-spinner');
-            submitBtn.disabled = true;
-            spinner.style.display = 'block';
-            
-            // Simulate API call
-            setTimeout(() => {
-                // Hide loading state
-                submitBtn.disabled = false;
-                spinner.style.display = 'none';
+                if (!validateForm('buyer')) return;
                 
-                // Show success message
-                document.getElementById('buyer-success').style.display = 'block';
-                this.style.display = 'none';
+                // Show loading state
+                const submitBtn = document.getElementById('buyer-submit-btn');
+                const spinner = document.getElementById('buyer-spinner');
+                submitBtn.disabled = true;
+                spinner.style.display = 'block';
                 
-                // In a real app, you would send this data to your server
-                // window.location.href = 'buyer-dashboard.html';
-            }, 2000);
-        });
+                // Simulate API call
+                setTimeout(() => {
+                    // Hide loading state
+                    submitBtn.disabled = false;
+                    spinner.style.display = 'none';
+                    
+                    // Show success message
+                    document.getElementById('buyer-success').style.display = 'block';
+                    this.style.display = 'none';
+                    
+                    // In a real app, you would send this data to your server
+                    // window.location.href = 'buyer-dashboard.html';
+                }, 2000);
+            });
+        }
 
         // Real-time validation
         document.querySelectorAll('input, select').forEach(element => {

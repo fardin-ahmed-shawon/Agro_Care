@@ -113,7 +113,7 @@ $page_title = 'AgroCare | Register';  // Set the page title
                         <h3>Registration Successful!</h3>
                         <p>Welcome to AgroFarm. Your account has been created successfully.</p>
                         <p>We've sent a verification email to your address. Please verify to complete your registration.</p>
-                        <a href="farmer-dashboard.html" class="btn btn-accent" style="margin-top: 15px;">Go to Dashboard</a>
+                        <!-- <a href="" class="btn btn-accent" style="margin-top: 15px;">Go to Dashboard</a> -->
                     </div>
                 </div>
 
@@ -206,7 +206,7 @@ $page_title = 'AgroCare | Register';  // Set the page title
                         <h3>Registration Successful!</h3>
                         <p>Welcome to AgroFarm. Your account has been created successfully.</p>
                         <p>We've sent a verification email to your address. Please verify to complete your registration.</p>
-                        <a href="buyer-dashboard.html" class="btn btn-accent" style="margin-top: 15px;">Go to Dashboard</a>
+                        <!-- <a href="" class="btn btn-accent" style="margin-top: 15px;">Go to Dashboard</a> -->
                     </div>
                 </div>
             </div>
@@ -243,54 +243,66 @@ $page_title = 'AgroCare | Register';  // Set the page title
 <!-----------=====================------------->
 <!----========= End Main Content ============--> 
 <!-----------=====================------------->
-
 <script>
-document.getElementById('farmerRegistrationForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent default form submission
+    document.getElementById('farmerRegistrationForm').addEventListener('submit', async function(e) {
+        e.preventDefault(); // Prevent page reload
 
-    const form = document.getElementById('farmerRegistrationForm');
-    const formData = new FormData(form);
-    formData.append('action', 'add-farmer'); // Add action param for API
+        const form = e.target;
+        const submitBtn = document.getElementById('farmer-submit-btn');
+        const spinner = document.getElementById('farmer-spinner');
 
-    fetch('/api/farmers.php?action=add-farmer', {
-        method: 'POST',
-        body: formData,
-        headers: {
-        'API-KEY': 'AGRPRJCT-API-KEY-744334674564HFHSSQYB71'
-    }
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            Swal.fire({
-                icon: 'success',
-                title: 'Registration Successful',
-                text: data.message,
-                confirmButtonColor: '#3085d6'
-            }).then(() => {
-                form.reset(); // Reset form on success
-                document.getElementById('farmer-success').style.display = 'block'; // Show success message block
+        // Show loading
+        submitBtn.disabled = true;
+        spinner.style.display = 'inline-block';
+
+        // Collect form data
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch('api/farmers.php?action=add-farmer', {
+                method: 'POST',
+                headers: {
+                    'API-Key': 'AGRPRJCT-API-KEY-744334674564HFHSSQYB71'
+                },
+                body: formData
             });
-        } else {
+
+            const data = await response.json();
+
+            if (data.success) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Registration Successful!',
+                    text: 'A new farmer account has been created successfully.',
+                    confirmButtonColor: '#3085d6'
+                }).then(() => {
+                    form.reset();
+                    form.style.display = 'none';
+                    document.getElementById('farmer-success').style.display = 'block';
+                });
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: data.message || 'Something went wrong. Please try again.',
+                    confirmButtonColor: '#d33'
+                });
+            }
+        } catch (error) {
+            console.error('Registration error:', error);
             Swal.fire({
                 icon: 'error',
-                title: 'Error',
-                text: data.message,
+                title: 'Request Failed',
+                text: 'An error occurred while processing your request.',
                 confirmButtonColor: '#d33'
             });
+        } finally {
+            spinner.style.display = 'none';
+            submitBtn.disabled = false;
         }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        Swal.fire({
-            icon: 'error',
-            title: 'Request Failed',
-            text: 'An error occurred while processing your request.',
-            confirmButtonColor: '#d33'
-        });
     });
-});
 </script>
+
 
 <!-- Footer -->
 <?php require 'footer.php'; ?>
