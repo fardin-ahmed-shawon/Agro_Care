@@ -124,30 +124,30 @@ $page_title = 'AgroCare | Register';  // Set the page title
                         <p>Access quality farm products directly from producers</p>
                     </div>
 
-                    <form id="buyerRegistrationForm">
+                    <form id="buyerRegistrationForm" enctype="multipart/form-data">
                         <div class="form-grid">
                             <div class="form-group">
                                 <label for="buyer-name">Full Name</label>
-                                <input type="text" id="buyer-name" class="form-control" placeholder="Your full name" required>
+                                <input name="full_name" type="text" id="buyer-name" class="form-control" placeholder="Your full name" required>
                                 <div class="error-message" id="buyer-name-error">Please enter your full name</div>
                             </div>
                             <div class="form-group">
                                 <label for="buyer-email">Email Address</label>
-                                <input type="email" id="buyer-email" class="form-control" placeholder="your@email.com" required>
+                                <input name="email_address" type="email" id="buyer-email" class="form-control" placeholder="your@email.com" required>
                                 <div class="error-message" id="buyer-email-error">Please enter a valid email address</div>
                             </div>
                             <div class="form-group">
                                 <label for="buyer-phone">Phone Number</label>
-                                <input type="tel" id="buyer-phone" class="form-control" placeholder="+880 1234 567890" required>
+                                <input name="phone" type="tel" id="buyer-phone" class="form-control" placeholder="+880 1234 567890" required>
                                 <div class="error-message" id="buyer-phone-error">Please enter a valid phone number</div>
                             </div>
                             <div class="form-group">
                                 <label for="buyer-company">Company/Organization</label>
-                                <input type="text" id="buyer-company" class="form-control" placeholder="(Optional)">
+                                <input name="company" type="text" id="buyer-company" class="form-control" placeholder="(Optional)">
                             </div>
                             <div class="form-group">
                                 <label for="buyer-type">Buyer Type</label>
-                                <select id="buyer-type" class="form-control" required>
+                                <select name="buyer_type" id="buyer-type" class="form-control" required>
                                     <option value="" disabled selected>Select buyer type</option>
                                     <option value="retailer">Retailer</option>
                                     <option value="wholesaler">Wholesaler</option>
@@ -161,7 +161,7 @@ $page_title = 'AgroCare | Register';  // Set the page title
                             </div>
                             <div class="form-group">
                                 <label for="buyer-location">Business Location</label>
-                                <select id="buyer-location" class="form-control" required>
+                                <select name="business_location" id="buyer-location" class="form-control" required>
                                     <option value="" disabled selected>Select your location</option>
                                     <option value="dhaka">Dhaka</option>
                                     <option value="chittagong">Chittagong</option>
@@ -176,13 +176,13 @@ $page_title = 'AgroCare | Register';  // Set the page title
                             </div>
                             <div class="form-group full-width">
                                 <label for="buyer-password">Create Password</label>
-                                <input type="password" id="buyer-password" class="form-control" placeholder="••••••••" required minlength="8">
+                                <input name="password" type="password" id="buyer-password" class="form-control" placeholder="••••••••" required minlength="8">
                                 <i class="fas fa-eye-slash password-toggle" onclick="togglePassword('buyer-password', this)"></i>
                                 <div class="error-message" id="buyer-password-error">Password must be at least 8 characters</div>
                             </div>
                             <div class="form-group full-width">
                                 <label for="buyer-confirm-password">Confirm Password</label>
-                                <input type="password" id="buyer-confirm-password" class="form-control" placeholder="••••••••" required minlength="8">
+                                <input name="confirm_password" type="password" id="buyer-confirm-password" class="form-control" placeholder="••••••••" required minlength="8">
                                 <i class="fas fa-eye-slash password-toggle" onclick="togglePassword('buyer-confirm-password', this)"></i>
                                 <div class="error-message" id="buyer-confirm-password-error">Passwords do not match</div>
                             </div>
@@ -243,6 +243,8 @@ $page_title = 'AgroCare | Register';  // Set the page title
 <!-----------=====================------------->
 <!----========= End Main Content ============--> 
 <!-----------=====================------------->
+
+<!-- Farmer Registration -->
 <script>
     document.getElementById('farmerRegistrationForm').addEventListener('submit', async function(e) {
         e.preventDefault(); // Prevent page reload
@@ -303,6 +305,66 @@ $page_title = 'AgroCare | Register';  // Set the page title
     });
 </script>
 
+<!-- Buyer Registration -->
+<script>
+    document.getElementById('buyerRegistrationForm').addEventListener('submit', async function(e) {
+        e.preventDefault(); // Prevent page reload
+
+        const form = e.target;
+        const submitBtn = document.getElementById('buyer-submit-btn');
+        const spinner = document.getElementById('buyer-spinner');
+
+        // Show loading
+        submitBtn.disabled = true;
+        spinner.style.display = 'inline-block';
+
+        // Collect form data
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch('api/buyers.php?action=add-buyer', {
+                method: 'POST',
+                headers: {
+                    'API-Key': 'AGRPRJCT-API-KEY-744334674564HFHSSQYB71'
+                },
+                body: formData
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Registration Successful!',
+                    text: 'A new buyer account has been created successfully.',
+                    confirmButtonColor: '#3085d6'
+                }).then(() => {
+                    form.reset();
+                    form.style.display = 'none';
+                    document.getElementById('buyer-success').style.display = 'block';
+                });
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: data.message || 'Something went wrong. Please try again.',
+                    confirmButtonColor: '#d33'
+                });
+            }
+        } catch (error) {
+            console.error('Registration error:', error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Request Failed',
+                text: 'An error occurred while processing your request.',
+                confirmButtonColor: '#d33'
+            });
+        } finally {
+            spinner.style.display = 'none';
+            submitBtn.disabled = false;
+        }
+    });
+</script>
 
 <!-- Footer -->
 <?php require 'footer.php'; ?>
