@@ -31,26 +31,26 @@ $page_title = 'AgroCare | Register';  // Set the page title
                         <p>Connect directly with buyers and grow your farming business</p>
                     </div>
 
-                    <form id="farmerRegistrationForm">
+                    <form id="farmerRegistrationForm" enctype="multipart/form-data">
                         <div class="form-grid">
                             <div class="form-group">
                                 <label for="farmer-name">Full Name</label>
-                                <input type="text" id="farmer-name" class="form-control" placeholder="Your full name" required>
+                                <input name="full_name" type="text" id="farmer-name" class="form-control" placeholder="Your full name" required>
                                 <div class="error-message" id="farmer-name-error">Please enter your full name</div>
                             </div>
                             <div class="form-group">
                                 <label for="farmer-email">Email Address</label>
-                                <input type="email" id="farmer-email" class="form-control" placeholder="your@email.com" required>
+                                <input name="email_address" type="email" id="farmer-email" class="form-control" placeholder="your@email.com" required>
                                 <div class="error-message" id="farmer-email-error">Please enter a valid email address</div>
                             </div>
                             <div class="form-group">
                                 <label for="farmer-phone">Phone Number</label>
-                                <input type="tel" id="farmer-phone" class="form-control" placeholder="+880 1234 567890" required>
+                                <input name="phone" type="tel" id="farmer-phone" class="form-control" placeholder="+880 1234 567890" required>
                                 <div class="error-message" id="farmer-phone-error">Please enter a valid phone number</div>
                             </div>
                             <div class="form-group">
                                 <label for="farmer-location">Location</label>
-                                <select id="farmer-location" class="form-control" required>
+                                <select name="location" id="farmer-location" class="form-control" required>
                                     <option value="" disabled selected>Select your location</option>
                                     <option value="dhaka">Dhaka</option>
                                     <option value="chittagong">Chittagong</option>
@@ -65,7 +65,7 @@ $page_title = 'AgroCare | Register';  // Set the page title
                             </div>
                             <div class="form-group">
                                 <label for="farm-type">Farm Type</label>
-                                <select id="farm-type" class="form-control" required>
+                                <select name="farm_type" id="farm-type" class="form-control" required>
                                     <option value="" disabled selected>Select farm type</option>
                                     <option value="crop">Crop Production</option>
                                     <option value="livestock">Livestock</option>
@@ -79,17 +79,17 @@ $page_title = 'AgroCare | Register';  // Set the page title
                             </div>
                             <div class="form-group">
                                 <label for="farm-size">Farm Size (acres)</label>
-                                <input type="number" id="farm-size" class="form-control" placeholder="10" min="0" step="0.1">
+                                <input name="farm_size" type="number" id="farm-size" class="form-control" placeholder="10" min="0" step="0.1">
                             </div>
                             <div class="form-group full-width">
                                 <label for="farmer-password">Create Password</label>
-                                <input type="password" id="farmer-password" class="form-control" placeholder="••••••••" required minlength="8">
+                                <input name="password" type="password" id="farmer-password" class="form-control" placeholder="••••••••" required minlength="8">
                                 <i class="fas fa-eye-slash password-toggle" onclick="togglePassword('farmer-password', this)"></i>
                                 <div class="error-message" id="farmer-password-error">Password must be at least 8 characters</div>
                             </div>
                             <div class="form-group full-width">
                                 <label for="farmer-confirm-password">Confirm Password</label>
-                                <input type="password" id="farmer-confirm-password" class="form-control" placeholder="••••••••" required minlength="8">
+                                <input name="confirm_password" type="password" id="farmer-confirm-password" class="form-control" placeholder="••••••••" required minlength="8">
                                 <i class="fas fa-eye-slash password-toggle" onclick="togglePassword('farmer-confirm-password', this)"></i>
                                 <div class="error-message" id="farmer-confirm-password-error">Passwords do not match</div>
                             </div>
@@ -243,6 +243,54 @@ $page_title = 'AgroCare | Register';  // Set the page title
 <!-----------=====================------------->
 <!----========= End Main Content ============--> 
 <!-----------=====================------------->
+
+<script>
+document.getElementById('farmerRegistrationForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent default form submission
+
+    const form = document.getElementById('farmerRegistrationForm');
+    const formData = new FormData(form);
+    formData.append('action', 'add-farmer'); // Add action param for API
+
+    fetch('/api/farmers.php?action=add-farmer', {
+        method: 'POST',
+        body: formData,
+        headers: {
+        'API-KEY': 'AGRPRJCT-API-KEY-744334674564HFHSSQYB71'
+    }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Registration Successful',
+                text: data.message,
+                confirmButtonColor: '#3085d6'
+            }).then(() => {
+                form.reset(); // Reset form on success
+                document.getElementById('farmer-success').style.display = 'block'; // Show success message block
+            });
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: data.message,
+                confirmButtonColor: '#d33'
+            });
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        Swal.fire({
+            icon: 'error',
+            title: 'Request Failed',
+            text: 'An error occurred while processing your request.',
+            confirmButtonColor: '#d33'
+        });
+    });
+});
+</script>
 
 <!-- Footer -->
 <?php require 'footer.php'; ?>

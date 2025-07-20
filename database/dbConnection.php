@@ -9,7 +9,7 @@ $servername = "localhost";
 $site_link = 'http://localhost/test/Agro_Care/';
 $username = "root";
 $password = "";
-$database_name = "";
+$database_name = "agro_care";
 
 // For production -----------------------------------------------------
 
