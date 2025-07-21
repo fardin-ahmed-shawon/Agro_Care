@@ -21,11 +21,11 @@
         });
 
         // Form Submission
-        document.getElementById('halalInvestmentForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your investment interest! Our advisor will contact you shortly.');
-            this.reset();
-        });
+        // document.getElementById('halalInvestmentForm').addEventListener('submit', function(e) {
+        //     e.preventDefault();
+        //     alert('Thank you for your investment interest! Our advisor will contact you shortly.');
+        //     this.reset();
+        // });
 
         // Smooth Scrolling for Anchor Links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {

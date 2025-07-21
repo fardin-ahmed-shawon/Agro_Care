@@ -284,6 +284,75 @@ $page_title = 'AgroFarm - Halal Investment Opportunities';  // Set the page titl
 <!-----------=====================------------->
 <!----========= End Main Content ============--> 
 <!-----------=====================------------->
+<script>
+    document.getElementById('halalInvestmentForm').addEventListener('submit', async function(e) {
+        e.preventDefault(); // Prevent default form submission
+
+        const form = e.target;
+        const submitBtn = form.querySelector('button[type="submit"]');
+        
+        // Add a spinner inside the button (optional, you can change as needed)
+        let originalBtnText = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Submitting <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>';
+
+        // Build FormData
+        const formData = new FormData();
+        formData.append('first_name', document.getElementById('firstName').value.trim());
+        formData.append('last_name', document.getElementById('lastName').value.trim());
+        formData.append('email_address', document.getElementById('email').value.trim());
+        formData.append('phone', document.getElementById('phone').value.trim());
+        formData.append('address', document.getElementById('address').value.trim());
+        formData.append('city', document.getElementById('city').value.trim());
+        formData.append('country', document.getElementById('country').value.trim());
+        formData.append('investment_model', document.getElementById('investmentModel').value);
+        formData.append('investment_amount', document.getElementById('investmentAmount').value);
+        formData.append('investment_duration', document.getElementById('investmentDuration').value);
+        formData.append('sharia_agreement', document.getElementById('shariaAgreement').checked ? 1 : '');
+        formData.append('terms_agreement', document.getElementById('termsAgreement').checked ? 1 : '');
+
+        try {
+            const response = await fetch('api/halal-investment.php?action=submit-investment', {
+                method: 'POST',
+                headers: {
+                    'API-Key': 'AGRPRJCT-API-KEY-744334674564HFHSSQYB71'
+                },
+                body: formData
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Application Submitted!',
+                    text: 'Your Halal investment application has been received.',
+                    confirmButtonColor: '#3085d6'
+                }).then(() => {
+                    form.reset();
+                });
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Submission Failed',
+                    text: result.message || 'Please try again.',
+                    confirmButtonColor: '#d33'
+                });
+            }
+        } catch (error) {
+            console.error('Submission error:', error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Network Error',
+                text: 'An error occurred while submitting your application.',
+                confirmButtonColor: '#d33'
+            });
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+        }
+    });
+</script>
 
 <!-- Footer -->
 <?php require 'footer.php'; ?>
