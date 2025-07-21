@@ -13,10 +13,10 @@ $database_name = "agro_care";
 
 // For production -----------------------------------------------------
 
-// $site_link = "";
-// $username = "";
-// $password = "";
-// $database_name = "";
+// $site_link = "https://farmercare.asia/";
+// $username = "nutrifri";
+// $password = "b3p:LE6ijSV#93";
+// $database_name = "nutrifri_agro_care";
 
 //---------------------------------------------------------------------
 
