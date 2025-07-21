@@ -1,23 +1,30 @@
 <?php
-    header('Content-Type: application/json');
+header('Content-Type: application/json');
 
-    // Load custom .env loader
-    require_once __DIR__ . '/../env_loader.php';
+// Include database connection file
+require_once '../database/dbConnection.php';
 
-    // DB & function includes
-    require_once __DIR__ . '/../database/dbConnection.php';
-    require_once __DIR__ . '/../functions.php';
+// Include functions file
+require_once '../functions.php';
 
-    // Read API key from headers
-    $headers = getallheaders();
-    $api_key = $headers['API-Key'] ?? '';
+// ------------------API authentication------------------
 
-    // Validate
-    if ($api_key !== $_ENV['API_KEY']) {
-        echo json_encode([
-            "success" => false,
-            "message" => "Invalid API key."
-        ]);
-        exit();
-    }
+// Define the API key
+
+define('API_KEY', 'AGRPRJCT-API-KEY-744334674564HFHSSQYB71');
+
+// Validate API key
+
+$headers = getallheaders();
+$api_key = $headers['API-Key'] ?? '';
+
+if ($api_key !== API_KEY) {
+    $response = array(
+        "success" => false,
+        "message" => "Invalid API key."
+    );
+    echo json_encode($response);
+    exit();
+}
+
 ?>
