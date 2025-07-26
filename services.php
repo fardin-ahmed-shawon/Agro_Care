@@ -1,6 +1,6 @@
 <?php
 $current_page = basename($_SERVER['PHP_SELF']); // Get the current page name
-$page_title = 'Our Services | AgroFarm - Complete Farming Solutions';  // Set the page title
+$page_title = 'Our Services | FarmerCare - Complete Farming Solutions';  // Set the page title
 ?>
 <!-- Header -->
 <?php require 'header.php'; ?>
@@ -141,7 +141,7 @@ $page_title = 'Our Services | AgroFarm - Complete Farming Solutions';  // Set th
     <section class="how-it-works">
         <div class="container">
             <h2 class="section-title">How Our Services Work</h2>
-            <p class="section-subtitle">Simple steps to access AgroFarm's comprehensive agricultural solutions</p>
+            <p class="section-subtitle">Simple steps to access FarmerCare's comprehensive agricultural solutions</p>
             
             <div class="steps-container">
                 <div class="step">
@@ -252,7 +252,7 @@ $page_title = 'Our Services | AgroFarm - Complete Farming Solutions';  // Set th
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>How do I sign up for AgroFarm services?</span>
+                        <span>How do I sign up for FarmerCare services?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
@@ -307,7 +307,7 @@ $page_title = 'Our Services | AgroFarm - Complete Farming Solutions';  // Set th
     <section class="service-cta">
         <div class="container">
             <h2>Ready to Transform Your Farming Business?</h2>
-            <p>Join thousands of Bangladeshi farmers who are increasing their yields, income, and sustainability with AgroFarm's innovative solutions.</p>
+            <p>Join thousands of Bangladeshi farmers who are increasing their yields, income, and sustainability with FarmerCare's innovative solutions.</p>
             <div class="cta-buttons">
                 <a href="contact.html" class="btn" style="background-color: white; color: var(--primary);">Get Started Today</a>
                 <a href="tel:+8801234567890" class="btn btn-outline" style="border-color: white; color: white;">Call Our Experts</a>

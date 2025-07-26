@@ -1,6 +1,6 @@
 <?php
 $current_page = basename($_SERVER['PHP_SELF']);   // Get the current page name
-$page_title = 'AgroFarm - Halal Investment Opportunities';  // Set the page title
+$page_title = 'FarmerCare - Halal Investment Opportunities';  // Set the page title
 ?>
 <!-- Header -->
 <?php require 'header.php'; ?>
@@ -25,7 +25,7 @@ $page_title = 'AgroFarm - Halal Investment Opportunities';  // Set the page titl
         <div class="container">
             <div>
                 <h2>Sharia-Compliant Agricultural Investments</h2>
-                <p>AgroFarm offers Halal investment opportunities that align with Islamic financial principles while supporting Bangladesh's agricultural development. Our investment models are structured to avoid Riba (interest) and Gharar (excessive uncertainty), focusing instead on profit-sharing and asset-backed investments.</p>
+                <p>FarmerCare offers Halal investment opportunities that align with Islamic financial principles while supporting Bangladesh's agricultural development. Our investment models are structured to avoid Riba (interest) and Gharar (excessive uncertainty), focusing instead on profit-sharing and asset-backed investments.</p>
                 
                 <ul>
                     <li><i class="fas fa-check-circle"></i> <strong>100% Halal</strong> - Fully compliant with Islamic finance principles</li>
@@ -81,7 +81,7 @@ $page_title = 'AgroFarm - Halal Investment Opportunities';  // Set the page titl
     <section class="benefits">
         <div class="container">
             <h2 class="section-title">Benefits of Investing With Us</h2>
-            <p class="section-subtitle">Why AgroFarm is the preferred choice for Halal agricultural investments</p>
+            <p class="section-subtitle">Why FarmerCare is the preferred choice for Halal agricultural investments</p>
             
             <div class="benefits-grid">
                 <div class="benefit-card">

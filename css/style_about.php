@@ -690,7 +690,7 @@
             }
         }
         
-        @media (max-width: 768px) {
+        @media (max-width: 1170px) {
             .nav-links {
                 display: none;
                 position: absolute;

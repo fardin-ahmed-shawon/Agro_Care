@@ -1,6 +1,6 @@
 <?php
 $current_page = basename($_SERVER['PHP_SELF']); // Get the current page name
-$page_title = 'AgroFarm | Admin Panel';  // Set the page title
+$page_title = 'FarmerCare | Admin Panel';  // Set the page title
 ?>
 <?php require 'header.php'; ?>
 
@@ -27,7 +27,13 @@ $page_title = 'AgroFarm | Admin Panel';  // Set the page title
                         <i class="fas fa-users"></i>
                     </div>
                     <div class="stats-info">
-                        <h3>1,254</h3>
+                        <h3>
+                            <?php 
+                                $farmers = countTableRows($conn, 'farmers', 'total');
+                                $buyers = countTableRows($conn, 'buyers', 'total'); 
+                                echo $farmers+$buyers;
+                            ?>
+                        </h3>
                         <p>Total Users</p>
                     </div>
                 </div>
@@ -36,7 +42,11 @@ $page_title = 'AgroFarm | Admin Panel';  // Set the page title
                         <i class="fas fa-tractor"></i>
                     </div>
                     <div class="stats-info">
-                        <h3>856</h3>
+                        <h3>
+                            <?php 
+                                echo countTableRows($conn, 'farmers', 'total');
+                            ?>
+                        </h3>
                         <p>Farmers</p>
                     </div>
                 </div>
@@ -45,7 +55,11 @@ $page_title = 'AgroFarm | Admin Panel';  // Set the page title
                         <i class="fas fa-shopping-basket"></i>
                     </div>
                     <div class="stats-info">
-                        <h3>398</h3>
+                        <h3>
+                            <?php 
+                                echo countTableRows($conn, 'buyers', 'total');
+                            ?>
+                        </h3>
                         <p>Buyers</p>
                     </div>
                 </div>
@@ -54,14 +68,14 @@ $page_title = 'AgroFarm | Admin Panel';  // Set the page title
                         <i class="fas fa-shopping-cart"></i>
                     </div>
                     <div class="stats-info">
-                        <h3>2,541</h3>
+                        <h3>0</h3>
                         <p>Products</p>
                     </div>
                 </div>
             </div>
 
             <!-- Recent Orders Card -->
-            <div class="card">
+            <!-- <div class="card">
                 <div class="card-header">
                     <h3>Recent Orders</h3>
                     <div class="card-actions">
@@ -147,7 +161,7 @@ $page_title = 'AgroFarm | Admin Panel';  // Set the page title
                         </table>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Recent Farmers and Recent Buyers Cards -->
             <div class="form-row">
@@ -160,7 +174,7 @@ $page_title = 'AgroFarm | Admin Panel';  // Set the page title
                         </div>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive">
+                        <div class="table-responsive" style="max-height: 400px">
                             <table>
                                 <thead>
                                     <tr>
@@ -172,46 +186,19 @@ $page_title = 'AgroFarm | Admin Panel';  // Set the page title
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Ahmed Rahman</td>
-                                        <td>Dhaka</td>
-                                        <td>Crop Production</td>
-                                        <td><span class="status active">Active</span></td>
-                                        <td>
-                                            <button class="action-btn"><i class="fas fa-eye"></i></button>
-                                            <button class="action-btn"><i class="fas fa-edit"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Fatima Begum</td>
-                                        <td>Chittagong</td>
-                                        <td>Poultry</td>
-                                        <td><span class="status active">Active</span></td>
-                                        <td>
-                                            <button class="action-btn"><i class="fas fa-eye"></i></button>
-                                            <button class="action-btn"><i class="fas fa-edit"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mohammad Ali</td>
-                                        <td>Khulna</td>
-                                        <td>Aquaculture</td>
-                                        <td><span class="status pending">Pending</span></td>
-                                        <td>
-                                            <button class="action-btn"><i class="fas fa-eye"></i></button>
-                                            <button class="action-btn"><i class="fas fa-edit"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Nusrat Jahan</td>
-                                        <td>Rajshahi</td>
-                                        <td>Dairy</td>
-                                        <td><span class="status active">Active</span></td>
-                                        <td>
-                                            <button class="action-btn"><i class="fas fa-eye"></i></button>
-                                            <button class="action-btn"><i class="fas fa-edit"></i></button>
-                                        </td>
-                                    </tr>
+                                    <?php
+                                        echo get_all_farmers('
+                                        <tr>
+                                            <td>#FIRST_NAME# #LAST_NAME#</td>
+                                            <td>#LOCATION#</td>
+                                            <td>#FARM_TYPE#</td>
+                                            <td><span class="status active">Active</span></td>
+                                            <td>
+                                                <button class="action-btn"><i class="fas fa-eye"></i></button>
+                                                <button class="action-btn"><i class="fas fa-edit"></i></button>
+                                            </td>
+                                        </tr>');
+                                    ?>
                                 </tbody>
                             </table>
                         </div>
@@ -227,7 +214,7 @@ $page_title = 'AgroFarm | Admin Panel';  // Set the page title
                         </div>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive">
+                        <div class="table-responsive" style="max-height: 400px">
                             <table>
                                 <thead>
                                     <tr>
@@ -239,46 +226,19 @@ $page_title = 'AgroFarm | Admin Panel';  // Set the page title
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Karim Food Products</td>
-                                        <td>Karim & Sons</td>
-                                        <td>Wholesaler</td>
-                                        <td><span class="status active">Active</span></td>
-                                        <td>
-                                            <button class="action-btn"><i class="fas fa-eye"></i></button>
-                                            <button class="action-btn"><i class="fas fa-edit"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Green Valley Supermarket</td>
-                                        <td>Green Valley Ltd.</td>
-                                        <td>Supermarket</td>
-                                        <td><span class="status active">Active</span></td>
-                                        <td>
-                                            <button class="action-btn"><i class="fas fa-eye"></i></button>
-                                            <button class="action-btn"><i class="fas fa-edit"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Ocean Seafood</td>
-                                        <td>Ocean Foods</td>
-                                        <td>Exporter</td>
-                                        <td><span class="status pending">Pending</span></td>
-                                        <td>
-                                            <button class="action-btn"><i class="fas fa-eye"></i></button>
-                                            <button class="action-btn"><i class="fas fa-edit"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Royal Restaurant</td>
-                                        <td>Royal Hospitality</td>
-                                        <td>Restaurant</td>
-                                        <td><span class="status active">Active</span></td>
-                                        <td>
-                                            <button class="action-btn"><i class="fas fa-eye"></i></button>
-                                            <button class="action-btn"><i class="fas fa-edit"></i></button>
-                                        </td>
-                                    </tr>
+                                    <?php
+                                        echo get_all_buyers('
+                                        <tr>
+                                            <td>#FIRST_NAME# #LAST_NAME#</td>
+                                            <td>#COMPANY#</td>
+                                            <td>#BUYER_TYPE#</td>
+                                            <td><span class="status active">Active</span></td>
+                                            <td>
+                                                <button class="action-btn"><i class="fas fa-eye"></i></button>
+                                                <button class="action-btn"><i class="fas fa-edit"></i></button>
+                                            </td>
+                                        </tr>');
+                                    ?>
                                 </tbody>
                             </table>
                         </div>

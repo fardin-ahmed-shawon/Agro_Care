@@ -6,6 +6,10 @@ include 'database/dbConnection.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/fav.png" type="image/x-icon">
+
     <title><?= $page_title ?></title>
     
     <!-- Site Link -->
@@ -16,6 +20,9 @@ include 'database/dbConnection.php';
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 
 
     <?php
@@ -63,7 +70,9 @@ include 'database/dbConnection.php';
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="index.php" class="logo"><i class="fas fa-leaf"></i>Agro<span>Care</span></a>
+                <a href="index.php" class="logo">
+                    <img style="width: 170px;" src="images/far-logo.png" alt="">
+                </a>
                 <ul class="nav-links">
                     <li><a href="index.php" class="<?= $current_page == 'index.php' ? 'active' : '' ?>">Home</a></li>
 

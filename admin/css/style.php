@@ -34,6 +34,10 @@
             min-height: 100vh;
         }
 
+        a {
+           color: green;
+        }
+
         /* Sidebar */
         .sidebar {
             width: 250px;

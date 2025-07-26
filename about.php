@@ -1,6 +1,6 @@
 <?php
 $current_page = basename($_SERVER['PHP_SELF']); // Get the current page name
-$page_title = 'About Us | AgroFarm - Empowering Farmers';  // Set the page title
+$page_title = 'About Us | FarmerCare - Empowering Farmers';  // Set the page title
 ?>
 <!-- Header -->
 <?php require 'header.php'; ?>
@@ -29,7 +29,7 @@ $page_title = 'About Us | AgroFarm - Empowering Farmers';  // Set the page title
             <div class="about-flex">
                 <div class="about-text">
                     <h2>Empowering Bangladesh's Agricultural Future</h2>
-                    <p>AgroFarm is a pioneering agricultural technology platform dedicated to revolutionizing farming practices across Bangladesh. Founded in 2018 by agricultural experts and tech innovators, we bridge critical gaps between farmers, markets, and essential resources through cutting-edge solutions.</p>
+                    <p>FarmerCare is a pioneering agricultural technology platform dedicated to revolutionizing farming practices across Bangladesh. Founded in 2018 by agricultural experts and tech innovators, we bridge critical gaps between farmers, markets, and essential resources through cutting-edge solutions.</p>
                     <p>Our comprehensive ecosystem combines deep agricultural knowledge with advanced technology to address the real challenges faced by farmers daily. We're committed to sustainable farming practices that increase productivity while protecting our environment for future generations.</p>
                     <p>From humble beginnings helping 50 local farmers sell their produce, we've grown into a national platform serving over 10,000 farmers across 25 districts, facilitating millions in agricultural transactions annually.</p>
                     <div class="cta-buttons">
@@ -38,7 +38,7 @@ $page_title = 'About Us | AgroFarm - Empowering Farmers';  // Set the page title
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="images/tean in field.jpg" alt="AgroFarm Team in Field">
+                    <img src="images/tean in field.jpg" alt="FarmerCare Team in Field">
                 </div>
             </div>
         </div>
@@ -132,7 +132,7 @@ $page_title = 'About Us | AgroFarm - Empowering Farmers';  // Set the page title
     <section class="team-section">
         <div class="container">
             <h2 class="section-title">Leadership Team</h2>
-            <p class="section-subtitle">The passionate experts driving AgroFarm's mission forward</p>
+            <p class="section-subtitle">The passionate experts driving FarmerCare's mission forward</p>
             
             <div class="team-grid">
                 <div class="team-member">
@@ -226,7 +226,7 @@ $page_title = 'About Us | AgroFarm - Empowering Farmers';  // Set the page title
         <div class="container">
             <div class="cta-content">
                 <h2>Ready to Transform Your Farming Business?</h2>
-                <p>Join thousands of Bangladeshi farmers who are increasing their yields, income, and sustainability with AgroFarm's innovative solutions.</p>
+                <p>Join thousands of Bangladeshi farmers who are increasing their yields, income, and sustainability with FarmerCare's innovative solutions.</p>
                 <div class="cta-buttons">
                     <a href="contact.html" class="btn">Get Started Today</a>
                     <a href="tel:+8801234567890" class="btn btn-outline" style="color: var(--primary); border-color: var(--primary);">Call Our Experts</a>

@@ -3,7 +3,7 @@
         <div class="container">
             <div class="footer-content">
                 <div>
-                    <a href="index.html" class="logo footer-logo"><i class="fas fa-leaf"></i>Agro<span>Care</span></a>
+                    <a href="index.php" class="logo footer-logo"><i class="fas fa-leaf"></i>Agro<span>Care</span></a>
                     <p>Empowering farmers and buyers through direct connections and innovative solutions.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -17,11 +17,11 @@
                     <div class="footer-column">
                         <h4>Quick Links</h4>
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="testimonials.html">Testimonials</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="index.php">Home</a></li>
+                            <li><a href="services.php">Services</a></li>
+                            <li><a href="about.php">About Us</a></li>
+                            <li><a href="testimonials.php">Testimonials</a></li>
+                            <li><a href="contact.php">Contact</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">

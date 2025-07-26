@@ -1,6 +1,6 @@
 <?php
 $current_page = basename($_SERVER['PHP_SELF']); // Get the current page name
-$page_title = 'AgroFarm - Modern Agricultural Solutions';  // Set the page title
+$page_title = 'FarmerCare - Modern Agricultural Solutions';  // Set the page title
 ?>
 <!-- Header -->
 <?php require 'header.php'; ?>
@@ -15,11 +15,43 @@ $page_title = 'AgroFarm - Modern Agricultural Solutions';  // Set the page title
         <div class="container">
             <div class="hero-content">
                 <h1>Transforming Agriculture Through Innovation</h1>
-                <p>AgroFarm connects farmers with markets, financial services, and modern farming techniques to increase productivity and sustainability across Bangladesh.</p>
+                <p>FarmerCare connects farmers with markets, financial services, and modern farming techniques to increase productivity and sustainability across Bangladesh.</p>
                 <div class="hero-buttons">
-                    <a href="register.html" class="btn">Register Now</a>
-                    <a href="services.html" class="btn btn-outline">Explore Services</a>
+                    <a href="register.php" class="btn">Register Now</a>
+                    <a href="services.php" class="btn">Explore Services</a>
                 </div>
+            </div>
+            <br><br>
+            <div class="row count-area">
+
+                <div class="col-6 mb-3 mb-md-0 col-md-3">
+                    <div class="count-item">
+                        <h3>10,000+</h3>
+                        <p>Farmers Empowered</p>
+                    </div>
+                </div>
+
+                <div class="col-6 mb-3 mb-md-0 col-md-3">
+                    <div class="count-item">
+                        <h3>$5M+</h3>
+                        <p>In Transactions</p>
+                    </div>
+                </div>
+
+                <div class="col-6 mb-3 mb-md-0 col-md-3">
+                    <div class="count-item">
+                        <h3>25+</h3>
+                        <p>Districts Covered</p>
+                    </div>
+                </div>
+
+                <div class="col-6 mb-3 mb-md-0 col-md-3">
+                    <div class="count-item">
+                        <h3>95%</h3>
+                        <p>Satisfaction Rate</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -27,7 +59,7 @@ $page_title = 'AgroFarm - Modern Agricultural Solutions';  // Set the page title
     <!-- Features Section -->
     <section class="features">
         <div class="container">
-            <h2 class="section-title">Why Choose AgroFarm</h2>
+            <h2 class="section-title">Why Choose FarmerCare</h2>
             <p class="section-subtitle">Comprehensive solutions designed specifically for Bangladeshi farmers</p>
             
             <div class="features-grid">
@@ -88,7 +120,7 @@ $page_title = 'AgroFarm - Modern Agricultural Solutions';  // Set the page title
             <div class="about-content">
                 <div class="about-text">
                     <h2 class="section-title">Our Agricultural Revolution</h2>
-                    <p>AgroFarm is a pioneering agricultural technology platform dedicated to transforming farming practices across Bangladesh. Founded in 2018, we bridge critical gaps between farmers, markets, and essential resources through cutting-edge solutions.</p>
+                    <p>FarmerCare is a pioneering agricultural technology platform dedicated to transforming farming practices across Bangladesh. Founded in 2018, we bridge critical gaps between farmers, markets, and essential resources through cutting-edge solutions.</p>
                     
                     <ul class="about-list">
                         <li><i class="fas fa-check-circle"></i> <strong>10,000+ farmers</strong> empowered across 25 districts</li>
@@ -101,7 +133,7 @@ $page_title = 'AgroFarm - Modern Agricultural Solutions';  // Set the page title
                 </div>
                 
                 <div class="about-image">
-                    <img src="images/tean in field.jpg" alt="AgroFarm Team in Field">
+                    <img src="images/tean in field.jpg" alt="FarmerCare Team in Field">
                 </div>
             </div>
         </div>
@@ -154,12 +186,12 @@ $page_title = 'AgroFarm - Modern Agricultural Solutions';  // Set the page title
     <section class="testimonials">
         <div class="container">
             <h2 class="section-title">Success Stories</h2>
-            <p class="section-subtitle">Hear from farmers who have transformed their operations with AgroFarm</p>
+            <p class="section-subtitle">Hear from farmers who have transformed their operations with FarmerCare</p>
             
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>Before AgroFarm, I struggled to find reliable buyers for my rice. Now I can sell my entire harvest before it's even ready through their marketplace, often at prices 20-30% higher than before.</p>
+                        <p>Before FarmerCare, I struggled to find reliable buyers for my rice. Now I can sell my entire harvest before it's even ready through their marketplace, often at prices 20-30% higher than before.</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
@@ -189,7 +221,7 @@ $page_title = 'AgroFarm - Modern Agricultural Solutions';  // Set the page title
                 
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>AgroFarm's equipment rental service saved me thousands in upfront costs. I can now use modern machinery when I need it without the burden of ownership and maintenance.</p>
+                        <p>FarmerCare's equipment rental service saved me thousands in upfront costs. I can now use modern machinery when I need it without the burden of ownership and maintenance.</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
@@ -206,7 +238,7 @@ $page_title = 'AgroFarm - Modern Agricultural Solutions';  // Set the page title
     </section>
 
     <!-- Stats Section -->
-    <section class="stats">
+    <!-- <section class="stats">
         <div class="container">
             <h2 class="section-title">Our Impact in Numbers</h2>
             <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Measuring our contribution to Bangladesh's agricultural sector</p>
@@ -230,14 +262,14 @@ $page_title = 'AgroFarm - Modern Agricultural Solutions';  // Set the page title
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
             <div class="cta-content">
                 <h2>Ready to Transform Your Farming Business?</h2>
-                <p>Join thousands of Bangladeshi farmers who are increasing their yields, income, and sustainability with AgroFarm's innovative solutions.</p>
+                <p>Join thousands of Bangladeshi farmers who are increasing their yields, income, and sustainability with FarmerCare's innovative solutions.</p>
                 <div class="cta-buttons">
                     <a href="register.html" class="btn">Register Now</a>
                     <a href="tel:+8801234567890" class="btn btn-outline" style="color: var(--primary); border-color: var(--primary);">Call Our Experts</a>

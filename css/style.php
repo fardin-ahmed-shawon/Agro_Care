@@ -37,7 +37,8 @@
         .btn {
             display: inline-block;
             padding: 12px 30px;
-            background-color: var(--primary);
+            /* background-color: var(--primary); */
+            background-color: #18601cff;
             color: white;
             border-radius: 4px;
             font-weight: 500;
@@ -182,7 +183,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(46, 125, 50, 0.9), rgba(27, 94, 32, 0.9)), 
+            background: linear-gradient(135deg, rgba(46, 125, 50, 0.78), rgba(27, 94, 31, 0.78)), 
                         url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
@@ -679,7 +680,7 @@
             }
             
             .hero {
-                height: auto;
+                /* height: auto; */
                 padding: 120px 0;
             }
             
@@ -688,7 +689,7 @@
             }
         }
         
-        @media (max-width: 768px) {
+        @media (max-width: 1170px) {
             .nav-links {
                 display: none;
                 position: absolute;
@@ -753,6 +754,49 @@
         /* Next Updated CSS */
         .main-area {
             min-height: 500px;
+        }
+
+
+        /* Top Countdown */
+        .count-item {
+            padding: 30px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .count-item:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255,255,255,0.15);
+        }
+        
+        .count-item h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .count-item p {
+            font-size: 0.8rem;
+            opacity: 0.9;
+            margin-bottom: 0;
+        }
+
+        @media only screen and (max-width: 970px) {
+            .count-item {
+                padding: 20px;
+            }
+            .count-item h3 {
+                font-size: 1.5rem;
+            }
+            .count-item p {
+                font-size: 0.7rem;
+            }
         }
 
     </style>

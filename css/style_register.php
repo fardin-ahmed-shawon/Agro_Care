@@ -559,7 +559,7 @@
         }
 
         /* Responsive Design */
-        @media (max-width: 992px) {
+        @media (max-width: 1170px) {
             .nav-links {
                 display: none;
                 position: absolute;

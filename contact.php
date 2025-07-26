@@ -1,6 +1,6 @@
 <?php
 $current_page = basename($_SERVER['PHP_SELF']); // Get the current page name
-$page_title = 'Contact Us | AgroFarm - Modern Agricultural Solutions';  // Set the page title
+$page_title = 'Contact Us | FarmerCare - Modern Agricultural Solutions';  // Set the page title
 ?>
 <!-- Header -->
 <?php require 'header.php'; ?>
@@ -52,7 +52,7 @@ $page_title = 'Contact Us | AgroFarm - Modern Agricultural Solutions';  // Set t
                                 <i class="fas fa-envelope"></i>
                                 <div>
                                     <strong>Email:</strong> 
-                                    <p><a href="mailto:info@agrofarm.com">info@agrofarm.com</a></p>
+                                    <p><a href="mailto:info@FarmerCare.com">info@FarmerCare.com</a></p>
                                 </div>
                             </li>
                             <li>
@@ -149,12 +149,12 @@ $page_title = 'Contact Us | AgroFarm - Modern Agricultural Solutions';  // Set t
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>How can I join AgroFarm as a farmer?</span>
+                        <span>How can I join FarmerCare as a farmer?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>Joining AgroFarm is simple! You can register through our website, mobile app, or by visiting any of our regional offices. Our team will guide you through the registration process and help you get started with our services.</p>
+                            <p>Joining FarmerCare is simple! You can register through our website, mobile app, or by visiting any of our regional offices. Our team will guide you through the registration process and help you get started with our services.</p>
                         </div>
                     </div>
                 </div>

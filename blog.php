@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroFarm - Complete Farming Solutions</title>
+    <title>FarmerCare - Complete Farming Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -959,7 +959,7 @@
     <!-- Hero Section -->
     <section class="services-hero">
         <div class="container">
-            <h1>AgroFarm Blog</h1>
+            <h1>FarmerCare Blog</h1>
             <p>Discover the latest farming techniques, success stories, and agricultural innovations from Bangladesh and beyond.</p>
             <a href="#blog" class="btn btn-accent">Read Our Articles</a>
         </div>
@@ -968,7 +968,7 @@
     <!-- Blog Section -->
     <section class="blog-section" id="blog">
         <div class="container">
-            <h2 class="section-title">AgroFarm Blog</h2>
+            <h2 class="section-title">FarmerCare Blog</h2>
             <p class="section-subtitle">Latest news, tips, and insights for modern farmers</p>
             
             <div class="blog-grid">
@@ -1006,7 +1006,7 @@
                     </div>
                     <div class="blog-content">
                         <h3><a href="single-post.html">Farmer Success Story: From Struggle to Prosperity</a></h3>
-                        <p>How one farmer in Rajshahi tripled his income using AgroFarm's digital marketplace and training programs.</p>
+                        <p>How one farmer in Rajshahi tripled his income using FarmerCare's digital marketplace and training programs.</p>
                         <a href="single-post.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
@@ -1106,7 +1106,7 @@
     <section class="how-it-works">
         <div class="container">
             <h2 class="section-title">How Our Services Work</h2>
-            <p class="section-subtitle">Simple steps to access AgroFarm's comprehensive agricultural solutions</p>
+            <p class="section-subtitle">Simple steps to access FarmerCare's comprehensive agricultural solutions</p>
             
             <div class="steps-container">
                 <div class="step">
@@ -1148,7 +1148,7 @@
     <section class="service-cta">
         <div class="container">
             <h2>Ready to Transform Your Farming Business?</h2>
-            <p>Join thousands of Bangladeshi farmers who are increasing their yields, income, and sustainability with AgroFarm's innovative solutions.</p>
+            <p>Join thousands of Bangladeshi farmers who are increasing their yields, income, and sustainability with FarmerCare's innovative solutions.</p>
             <div class="cta-buttons">
                 <a href="register.html" class="btn" style="background-color: white; color: var(--primary);">Register Now</a>
                 <a href="contact.html" class="btn btn-outline" style="border-color: white; color: white;">Contact Us</a>
@@ -1161,7 +1161,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3>AgroFarm</h3>
+                    <h3>FarmerCare</h3>
                     <p>Empowering Bangladesh's farmers through innovative technology and sustainable agricultural solutions.</p>
                     <div class="footer-social">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -1199,7 +1199,7 @@
                     <ul>
                         <li><a href="#"><i class="fas fa-map-marker-alt"></i> 123 Farmgate, Dhaka 1215, Bangladesh</a></li>
                         <li><a href="tel:+8801234567890"><i class="fas fa-phone-alt"></i> +880 1234 567890</a></li>
-                        <li><a href="mailto:info@agrofarm.com"><i class="fas fa-envelope"></i> info@agrofarm.com</a></li>
+                        <li><a href="mailto:info@FarmerCare.com"><i class="fas fa-envelope"></i> info@FarmerCare.com</a></li>
                         <li><a href="#"><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</a></li>
                     </ul>
                 </div>
@@ -1215,7 +1215,7 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 AgroFarm. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: #ff5252;"></i> for Bangladeshi Farmers</p>
+                <p>&copy; 2023 FarmerCare. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: #ff5252;"></i> for Bangladeshi Farmers</p>
             </div>
         </div>
     </footer>

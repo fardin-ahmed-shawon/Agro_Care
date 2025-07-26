@@ -1,6 +1,6 @@
 <?php
 $current_page = basename($_SERVER['PHP_SELF']); // Get the current page name
-$page_title = 'Farmer Testimonials | AgroFarm - Modern Agricultural Solutions';  // Set the page title
+$page_title = 'Farmer Testimonials | FarmerCare - Modern Agricultural Solutions';  // Set the page title
 ?>
 <!-- Header -->
 <?php require 'header.php'; ?>
@@ -14,7 +14,7 @@ $page_title = 'Farmer Testimonials | AgroFarm - Modern Agricultural Solutions'; 
     <section class="testimonials-hero">
         <div class="container">
             <h1>Farmer Success Stories</h1>
-            <p>Hear directly from farmers who have transformed their agricultural businesses with AgroFarm's innovative solutions</p>
+            <p>Hear directly from farmers who have transformed their agricultural businesses with FarmerCare's innovative solutions</p>
             
             <ul class="breadcrumb">
                 <li><a href="index.html">Home</a></li>
@@ -39,7 +39,7 @@ $page_title = 'Farmer Testimonials | AgroFarm - Modern Agricultural Solutions'; 
                         <i class="fas fa-star"></i>
                     </div>
                     <div class="testimonial-content">
-                        <p>AgroFarm has completely transformed my rice farming business. Their marketplace connected me with reliable buyers who pay fair prices, and their training programs taught me modern techniques that increased my yield by 40% in just one season.</p>
+                        <p>FarmerCare has completely transformed my rice farming business. Their marketplace connected me with reliable buyers who pay fair prices, and their training programs taught me modern techniques that increased my yield by 40% in just one season.</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
@@ -65,7 +65,7 @@ $page_title = 'Farmer Testimonials | AgroFarm - Modern Agricultural Solutions'; 
                         <i class="fas fa-star"></i>
                     </div>
                     <div class="testimonial-content">
-                        <p>As a woman farmer, I faced many challenges accessing resources. AgroFarm's microloan program helped me expand my vegetable farm, and their women's empowerment training gave me the confidence to grow my business. I've tripled my income in two years.</p>
+                        <p>As a woman farmer, I faced many challenges accessing resources. FarmerCare's microloan program helped me expand my vegetable farm, and their women's empowerment training gave me the confidence to grow my business. I've tripled my income in two years.</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
@@ -91,7 +91,7 @@ $page_title = 'Farmer Testimonials | AgroFarm - Modern Agricultural Solutions'; 
                         <i class="fas fa-star-half-alt"></i>
                     </div>
                     <div class="testimonial-content">
-                        <p>The equipment rental service saved me thousands in upfront costs. I can now use modern machinery when I need it without the burden of ownership. AgroFarm's weather alerts have also been invaluable for protecting my fruit crops.</p>
+                        <p>The equipment rental service saved me thousands in upfront costs. I can now use modern machinery when I need it without the burden of ownership. FarmerCare's weather alerts have also been invaluable for protecting my fruit crops.</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
@@ -117,7 +117,7 @@ $page_title = 'Farmer Testimonials | AgroFarm - Modern Agricultural Solutions'; 
                         <i class="fas fa-star"></i>
                     </div>
                     <div class="testimonial-content">
-                        <p>AgroFarm's mobile app makes it so easy to manage my farm. I can check prices, connect with buyers, and even get expert advice all from my phone. It's like having an agricultural expert in my pocket!</p>
+                        <p>FarmerCare's mobile app makes it so easy to manage my farm. I can check prices, connect with buyers, and even get expert advice all from my phone. It's like having an agricultural expert in my pocket!</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
@@ -143,7 +143,7 @@ $page_title = 'Farmer Testimonials | AgroFarm - Modern Agricultural Solutions'; 
                         <i class="far fa-star"></i>
                     </div>
                     <div class="testimonial-content">
-                        <p>After joining AgroFarm's cooperative program, our village has seen remarkable changes. We now get better prices by selling collectively, and the shared equipment program has reduced our costs significantly.</p>
+                        <p>After joining FarmerCare's cooperative program, our village has seen remarkable changes. We now get better prices by selling collectively, and the shared equipment program has reduced our costs significantly.</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
@@ -169,7 +169,7 @@ $page_title = 'Farmer Testimonials | AgroFarm - Modern Agricultural Solutions'; 
                         <i class="fas fa-star"></i>
                     </div>
                     <div class="testimonial-content">
-                        <p>The soil testing service helped me understand exactly what my land needed. I optimized my fertilizer use and saw a 25% increase in production while spending less on inputs. AgroFarm's scientific approach is game-changing.</p>
+                        <p>The soil testing service helped me understand exactly what my land needed. I optimized my fertilizer use and saw a 25% increase in production while spending less on inputs. FarmerCare's scientific approach is game-changing.</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
@@ -231,7 +231,7 @@ $page_title = 'Farmer Testimonials | AgroFarm - Modern Agricultural Solutions'; 
                     </div>
                     <div class="video-info">
                         <h3>Community Success</h3>
-                        <p>How AgroFarm transformed an entire village</p>
+                        <p>How FarmerCare transformed an entire village</p>
                     </div>
                 </div>
             </div>
@@ -269,7 +269,7 @@ $page_title = 'Farmer Testimonials | AgroFarm - Modern Agricultural Solutions'; 
     <section class="testimonial-cta">
         <div class="container">
             <h2>Ready to Write Your Success Story?</h2>
-            <p>Join thousands of Bangladeshi farmers who are increasing their yields, income, and sustainability with AgroFarm's innovative solutions.</p>
+            <p>Join thousands of Bangladeshi farmers who are increasing their yields, income, and sustainability with FarmerCare's innovative solutions.</p>
             <div class="cta-buttons">
                 <a href="contact.html" class="btn">Get Started Today</a>
                 <a href="tel:+8801234567890" class="btn btn-outline">Call Our Experts</a>

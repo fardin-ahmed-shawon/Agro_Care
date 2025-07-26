@@ -22,8 +22,8 @@ if ($action == '') {
 
 // ==================== ADD BUYER ====================
 if ($action == 'add-buyer') {
-    $full_name     = sanitize_input($_POST['full_name'] ?? '');
-    $email_address = filter_var(trim($_POST['email_address'] ?? ''), FILTER_SANITIZE_EMAIL);
+    $first_name     = sanitize_input($_POST['first_name'] ?? '');
+    $last_name      = sanitize_input($_POST['last_name'] ?? '');
     $phone         = sanitize_input($_POST['phone'] ?? '');
     $company       = sanitize_input($_POST['company'] ?? '');
     $buyer_type    = sanitize_input($_POST['buyer_type'] ?? '');
@@ -31,7 +31,7 @@ if ($action == 'add-buyer') {
     $password      = trim($_POST['password'] ?? '');
     $confirm_password = trim($_POST['confirm_password'] ?? '');
 
-    if (empty($full_name) || empty($phone) || empty($password) || empty($confirm_password)) {
+    if (empty($first_name) || empty($last_name) || empty($phone) || empty($password) || empty($confirm_password)) {
         echo json_encode(["success" => false, "message" => "Fill up the required fields."]);
         exit();
     }
@@ -52,8 +52,8 @@ if ($action == 'add-buyer') {
 
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    $stmt = $conn->prepare("INSERT INTO buyers (full_name, email_address, phone, company, buyer_type, business_location, password) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssssss", $full_name, $email_address, $phone, $company, $buyer_type, $business_location, $hashed_password);
+    $stmt = $conn->prepare("INSERT INTO buyers (first_name, last_name, phone, company, buyer_type, business_location, password) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssssss", $first_name, $last_name, $phone, $company, $buyer_type, $business_location, $hashed_password);
 
     if ($stmt->execute()) {
         echo json_encode(["success" => true, "message" => "Buyer registration successful."]);
@@ -66,14 +66,14 @@ if ($action == 'add-buyer') {
 // ==================== UPDATE BUYER ====================
 else if ($action == 'update-buyer') {
     $buyer_id      = filter_var($_POST['buyer_id'] ?? '', FILTER_SANITIZE_NUMBER_INT);
-    $full_name     = sanitize_input($_POST['full_name'] ?? '');
-    $email_address = filter_var(trim($_POST['email_address'] ?? ''), FILTER_SANITIZE_EMAIL);
+    $first_name     = sanitize_input($_POST['first_name'] ?? '');
+    $last_name      = sanitize_input($_POST['last_name'] ?? '');
     $phone         = sanitize_input($_POST['phone'] ?? '');
     $company       = sanitize_input($_POST['company'] ?? '');
     $buyer_type    = sanitize_input($_POST['buyer_type'] ?? '');
     $business_location = sanitize_input($_POST['business_location'] ?? '');
 
-    if (empty($buyer_id) || empty($full_name) || empty($phone)) {
+    if (empty($buyer_id) || empty($first_name) || empty($phone)) {
         echo json_encode(["success" => false, "message" => "Fill up the required fields."]);
         exit();
     }
@@ -87,8 +87,8 @@ else if ($action == 'update-buyer') {
         exit();
     }
 
-    $stmt = $conn->prepare("UPDATE buyers SET full_name = ?, email_address = ?, phone = ?, company = ?, buyer_type = ?, business_location = ? WHERE id = ?");
-    $stmt->bind_param("ssssssi", $full_name, $email_address, $phone, $company, $buyer_type, $business_location, $buyer_id);
+    $stmt = $conn->prepare("UPDATE buyers SET first_name = ?, last_name = ?, phone = ?, company = ?, buyer_type = ?, business_location = ? WHERE id = ?");
+    $stmt->bind_param("ssssssi", $first_name, $last_name, $phone, $company, $buyer_type, $business_location, $buyer_id);
 
     if ($stmt->execute()) {
         echo json_encode(["success" => true, "message" => "Buyer successfully updated"]);
@@ -127,7 +127,7 @@ else if ($action == 'get-buyer') {
         exit();
     }
 
-    $stmt = $conn->prepare("SELECT full_name, email_address, phone, company, buyer_type, business_location FROM buyers WHERE id = ?");
+    $stmt = $conn->prepare("SELECT first_name, last_name, phone, company, buyer_type, business_location FROM buyers WHERE id = ?");
     $stmt->bind_param("i", $buyer_id);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -152,7 +152,7 @@ else if ($action == 'get-all-buyers') {
         exit();
     }
 
-    $sql = "SELECT id, full_name, email_address, phone, company, buyer_type, business_location, created_at FROM buyers";
+    $sql = "SELECT id, first_name, last_name, phone, company, buyer_type, business_location, created_at FROM buyers";
     $result = $conn->query($sql);
 
     if ($result) {

@@ -1,6 +1,6 @@
 <?php
 $current_page = basename($_SERVER['PHP_SELF']); // Get the current page name
-$page_title = 'AgroCare | Register';  // Set the page title
+$page_title = 'FarmerCare | Register';  // Set the page title
 ?>
 <!-- Header -->
 <?php require 'header.php'; ?>
@@ -34,14 +34,14 @@ $page_title = 'AgroCare | Register';  // Set the page title
                     <form id="farmerRegistrationForm" enctype="multipart/form-data">
                         <div class="form-grid">
                             <div class="form-group">
-                                <label for="farmer-name">Full Name</label>
-                                <input name="full_name" type="text" id="farmer-name" class="form-control" placeholder="Your full name" required>
-                                <div class="error-message" id="farmer-name-error">Please enter your full name</div>
+                                <label for="first-name">First Name</label>
+                                <input name="first_name" type="text" id="first-name" class="form-control" placeholder="Your first name" required>
+                                <div class="error-message" id="farmer-name-error">Please enter your first name</div>
                             </div>
                             <div class="form-group">
-                                <label for="farmer-email">Email Address</label>
-                                <input name="email_address" type="email" id="farmer-email" class="form-control" placeholder="your@email.com" required>
-                                <div class="error-message" id="farmer-email-error">Please enter a valid email address</div>
+                                <label for="last-name">Last Name</label>
+                                <input name="last_name" type="text" id="last-name" class="form-control" placeholder="Your last name" required>
+                                <div class="error-message" id="farmer-name-error">Please enter your last name</div>
                             </div>
                             <div class="form-group">
                                 <label for="farmer-phone">Phone Number</label>
@@ -60,6 +60,8 @@ $page_title = 'AgroCare | Register';  // Set the page title
                                     <option value="barisal">Barisal</option>
                                     <option value="rangpur">Rangpur</option>
                                     <option value="mymensingh">Mymensingh</option>
+                                    <option value="kishorganj">Kishorganj</option>
+                                    <option value="kushtia">Kushtia</option>
                                 </select>
                                 <div class="error-message" id="farmer-location-error">Please select your location</div>
                             </div>
@@ -67,11 +69,11 @@ $page_title = 'AgroCare | Register';  // Set the page title
                                 <label for="farm-type">Farm Type</label>
                                 <select name="farm_type" id="farm-type" class="form-control" required>
                                     <option value="" disabled selected>Select farm type</option>
-                                    <option value="crop">Crop Production</option>
+                                    <option value="crop_production">Crop Production</option>
                                     <option value="livestock">Livestock</option>
                                     <option value="poultry">Poultry</option>
                                     <option value="dairy">Dairy</option>
-                                    <option value="mixed">Mixed Farming</option>
+                                    <option value="mixed_farming">Mixed Farming</option>
                                     <option value="aquaculture">Aquaculture</option>
                                     <option value="horticulture">Horticulture</option>
                                 </select>
@@ -111,7 +113,7 @@ $page_title = 'AgroCare | Register';  // Set the page title
                     <div class="success-message" id="farmer-success">
                         <i class="fas fa-check-circle"></i>
                         <h3>Registration Successful!</h3>
-                        <p>Welcome to AgroFarm. Your account has been created successfully.</p>
+                        <p>Welcome to FarmerCare. Your account has been created successfully.</p>
                         <p>We've sent a verification email to your address. Please verify to complete your registration.</p>
                         <!-- <a href="" class="btn btn-accent" style="margin-top: 15px;">Go to Dashboard</a> -->
                     </div>
@@ -127,14 +129,14 @@ $page_title = 'AgroCare | Register';  // Set the page title
                     <form id="buyerRegistrationForm" enctype="multipart/form-data">
                         <div class="form-grid">
                             <div class="form-group">
-                                <label for="buyer-name">Full Name</label>
-                                <input name="full_name" type="text" id="buyer-name" class="form-control" placeholder="Your full name" required>
-                                <div class="error-message" id="buyer-name-error">Please enter your full name</div>
+                                <label for="first-name">First Name</label>
+                                <input name="first_name" type="text" id="first-name" class="form-control" placeholder="Your first name" required>
+                                <div class="error-message" id="farmer-name-error">Please enter your first name</div>
                             </div>
                             <div class="form-group">
-                                <label for="buyer-email">Email Address</label>
-                                <input name="email_address" type="email" id="buyer-email" class="form-control" placeholder="your@email.com" required>
-                                <div class="error-message" id="buyer-email-error">Please enter a valid email address</div>
+                                <label for="last-name">Last Name</label>
+                                <input name="last_name" type="text" id="last-name" class="form-control" placeholder="Your last name" required>
+                                <div class="error-message" id="farmer-name-error">Please enter your last name</div>
                             </div>
                             <div class="form-group">
                                 <label for="buyer-phone">Phone Number</label>
@@ -151,11 +153,11 @@ $page_title = 'AgroCare | Register';  // Set the page title
                                     <option value="" disabled selected>Select buyer type</option>
                                     <option value="retailer">Retailer</option>
                                     <option value="wholesaler">Wholesaler</option>
-                                    <option value="processor">Food Processor</option>
+                                    <option value="food_processor">Food Processor</option>
                                     <option value="exporter">Exporter</option>
-                                    <option value="restaurant">Restaurant/Hotel</option>
-                                    <option value="supermarket">Supermarket Chain</option>
-                                    <option value="individual">Individual Buyer</option>
+                                    <option value="restaurant/hotel">Restaurant/Hotel</option>
+                                    <option value="supermarket_chain">Supermarket Chain</option>
+                                    <option value="individual_buyer">Individual Buyer</option>
                                 </select>
                                 <div class="error-message" id="buyer-type-error">Please select your buyer type</div>
                             </div>
@@ -171,6 +173,8 @@ $page_title = 'AgroCare | Register';  // Set the page title
                                     <option value="barisal">Barisal</option>
                                     <option value="rangpur">Rangpur</option>
                                     <option value="mymensingh">Mymensingh</option>
+                                    <option value="kishorganj">Kishorganj</option>
+                                    <option value="kushtia">Kushtia</option>
                                 </select>
                                 <div class="error-message" id="buyer-location-error">Please select your business location</div>
                             </div>
@@ -204,7 +208,7 @@ $page_title = 'AgroCare | Register';  // Set the page title
                     <div class="success-message" id="buyer-success">
                         <i class="fas fa-check-circle"></i>
                         <h3>Registration Successful!</h3>
-                        <p>Welcome to AgroFarm. Your account has been created successfully.</p>
+                        <p>Welcome to FarmerCare. Your account has been created successfully.</p>
                         <p>We've sent a verification email to your address. Please verify to complete your registration.</p>
                         <!-- <a href="" class="btn btn-accent" style="margin-top: 15px;">Go to Dashboard</a> -->
                     </div>

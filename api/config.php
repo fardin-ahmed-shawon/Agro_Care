@@ -11,20 +11,20 @@ require_once '../functions.php';
 
 // Define the API key
 
-define('API_KEY', 'AGRPRJCT-API-KEY-744334674564HFHSSQYB71');
+//define('API_KEY', 'AGRPRJCT-API-KEY-744334674564HFHSSQYB71');
 
 // Validate API key
 
-$headers = getallheaders();
-$api_key = $headers['API-Key'] ?? '';
+// $headers = getallheaders();
+// $api_key = $headers['API-Key'] ?? '';
 
-if ($api_key !== API_KEY) {
-    $response = array(
-        "success" => false,
-        "message" => "Invalid API key."
-    );
-    echo json_encode($response);
-    exit();
-}
+// if ($api_key !== API_KEY) {
+//     $response = array(
+//         "success" => false,
+//         "message" => "Invalid API key."
+//     );
+//     echo json_encode($response);
+//     exit();
+// }
 
 ?>

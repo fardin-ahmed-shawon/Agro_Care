@@ -32,8 +32,8 @@ if ($action == '') {
 ///////////////////////////////////////////////////////////////////////////////////
 if ($action == 'add-farmer') {
     // Post data from the request
-    $full_name     = sanitize_input($_POST['full_name']     ?? '');
-    $email_address = filter_var(trim($_POST['email_address'] ?? ''), FILTER_SANITIZE_EMAIL);
+    $first_name     = sanitize_input($_POST['first_name']     ?? '');
+    $last_name     = sanitize_input($_POST['last_name']     ?? '');;
     $phone         = sanitize_input($_POST['phone']         ?? '');
     $location      = sanitize_input($_POST['location']      ?? '');
     $farm_type     = sanitize_input($_POST['farm_type']     ?? '');
@@ -43,7 +43,7 @@ if ($action == 'add-farmer') {
 
 
     // Validate required fields
-    if (empty($full_name) || empty($phone) || empty($location) || empty($farm_type) || empty($farm_size) || empty($password) ||  empty($confirm_password)){
+    if (empty($first_name) || empty($last_name) || empty($phone) || empty($location) || empty($farm_type) || empty($farm_size) || empty($password) ||  empty($confirm_password)){
         $response = array(
             "success" => false,
             "message" => "Fill up the required fields."
@@ -80,8 +80,8 @@ if ($action == 'add-farmer') {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // Prepare and execute the SQL insert
-    $stmt = $conn->prepare("INSERT INTO farmers (full_name, email_address, phone, location, farm_type, farm_size, password) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssssss", $full_name, $email_address, $phone, $location, $farm_type, $farm_size, $hashed_password);
+    $stmt = $conn->prepare("INSERT INTO farmers (first_name, last_name, phone, location, farm_type, farm_size, password) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssssss", $first_name, $last_name, $phone, $location, $farm_type, $farm_size, $hashed_password);
 
     if ($stmt->execute()) {
         $response = array(
@@ -110,8 +110,8 @@ if ($action == 'add-farmer') {
 else if ($action == 'update-farmer') {
 
     $farmer_id     = filter_var($_POST['farmer_id'] ?? '', FILTER_SANITIZE_NUMBER_INT);
-    $full_name     = sanitize_input($_POST['full_name']     ?? '');
-    $email_address = filter_var(trim($_POST['email_address'] ?? ''), FILTER_SANITIZE_EMAIL);
+    $first_name    = sanitize_input($_POST['first_name']     ?? '');
+    $last_name    = sanitize_input($_POST['last_name']     ?? '');
     $phone         = sanitize_input($_POST['phone']         ?? '');
     $location      = sanitize_input($_POST['location']      ?? '');
     $farm_type     = sanitize_input($_POST['farm_type']     ?? '');
@@ -119,7 +119,7 @@ else if ($action == 'update-farmer') {
 
 
     // Validate required fields
-    if (empty($farmer_id) || empty($full_name) || empty($phone) || empty($location) || empty($farm_type) || empty($farm_size)){
+    if (empty($farmer_id) || empty($first_name) || empty($last_name) || empty($phone) || empty($location) || empty($farm_type) || empty($farm_size)){
         $response = array(
             "success" => false,
             "message" => "Fill up the required fields."
@@ -143,8 +143,8 @@ else if ($action == 'update-farmer') {
     }
 
     // Prepare and execute the SQL update
-    $stmt = $conn->prepare("UPDATE farmers SET full_name = ?, email_address = ?, phone = ?, location = ?, farm_type = ?, farm_size = ? WHERE id = ?");
-    $stmt->bind_param("ssssssi", $full_name, $email_address, $phone, $location, $farm_type, $farm_size, $farmer_id);
+    $stmt = $conn->prepare("UPDATE farmers SET first_name = ?, last_name = ?, phone = ?, location = ?, farm_type = ?, farm_size = ? WHERE id = ?");
+    $stmt->bind_param("ssssssi", $first_name, $last_name, $phone, $location, $farm_type, $farm_size, $farmer_id);
 
     if ($stmt->execute()) {
         $response = array(
@@ -227,7 +227,7 @@ else if ($action == 'get-farmer') {
     }
 
     // Prepare and execute the SQL statement
-    $stmt = $conn->prepare("SELECT full_name, email_address, phone, location, farm_type, farm_size FROM farmers WHERE id = ?");
+    $stmt = $conn->prepare("SELECT first_name, last_name, phone, location, farm_type, farm_size FROM farmers WHERE id = ?");
     $stmt->bind_param("i", $farmer_id);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -270,7 +270,7 @@ else if ($action == 'get-all-farmers') {
     }
 
     // Prepare and execute the SQL statement to fetch all farmers
-    $sql = "SELECT id, full_name, email_address, phone, location, farm_type, farm_size, created_at FROM farmers";
+    $sql = "SELECT id, first_name, last_name, phone, location, farm_type, farm_size, created_at FROM farmers";
     $result = $conn->query($sql);
 
     if ($result) {

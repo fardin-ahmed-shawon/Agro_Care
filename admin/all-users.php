@@ -1,6 +1,6 @@
 <?php
 $current_page = basename($_SERVER['PHP_SELF']); // Get the current page name
-$page_title = 'FarmerCare | Admin Panel';  // Set the page title
+$page_title = 'Users | Admin Panel';  // Set the page title
 ?>
 <?php require 'header.php'; ?>
 
@@ -9,10 +9,10 @@ $page_title = 'FarmerCare | Admin Panel';  // Set the page title
 <!-----------=====================------------->
         <div class="content-area">
             <div class="page-header">
-                <h2>Blank</h2>
+                <h2>Users</h2>
                 <ul class="breadcrumb">
                     <li><a href="index.php">Home</a></li>
-                    <li>Blank</li>
+                    <li>Users</li>
                 </ul>
             </div>
 
